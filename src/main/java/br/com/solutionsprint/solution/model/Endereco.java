@@ -26,7 +26,7 @@ public class Endereco implements Serializable {
     private String descricao;
 
     // @ManyToOne(fetch = FetchType.EAGER)
-    // @JoinColumn(name = "cliente_id")
+    // @JoinColumn(name = "cliente_id", referencedColumnName = "id")
     // private Cliente cliente;
 
 }
