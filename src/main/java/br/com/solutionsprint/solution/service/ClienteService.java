@@ -23,9 +23,11 @@ public class ClienteService implements IClienteService {
     }
 
     @Override
-    public Cliente getClienteById() {
-        // TODO Auto-generated method stub
-        return null;
+    public Cliente getClienteById(Long id) {
+
+        Cliente cliente = clienteRepository.findById(id).get();
+
+        return cliente;
     }
 
     @Override
@@ -34,15 +36,22 @@ public class ClienteService implements IClienteService {
     }
 
     @Override
-    public Cliente updateCliente(Cliente cliente) {
-        // TODO Auto-generated method stub
-        return null;
+    public Cliente updateCliente(Long id, Cliente cliente) {
+
+        Cliente cl = clienteRepository.findById(id).get();
+
+        cl.setNome(cliente.getNome());
+        cl.setIdade(cliente.getIdade());
+        cl.setEmail(cliente.getEmail());
+        cl.setCpf(cliente.getCpf());
+        cl.setRg(cliente.getRg());
+
+        return clienteRepository.save(cl);
     }
 
     @Override
     public void deleteCliente(long id) {
-        // TODO Auto-generated method stub
-
+        clienteRepository.delete(clienteRepository.findById(id).get());
     }
 
 }

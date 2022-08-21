@@ -7,11 +7,11 @@ import br.com.solutionsprint.solution.model.Cliente;
 public interface IClienteService {
     List<Cliente> getAllClientes();
 
-    Cliente getClienteById();
+    Cliente getClienteById(Long id);
 
     Cliente addCliente(Cliente cliente);
 
-    Cliente updateCliente(Cliente cliente);
+    Cliente updateCliente(Long id, Cliente cliente);
 
     void deleteCliente(long id);
 
