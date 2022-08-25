@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.solutionsprint.solution.model.Cliente;
+import br.com.solutionsprint.solution.model.Cadastro;
 import br.com.solutionsprint.solution.service.IClienteService;
 
 @RestController
@@ -32,30 +32,30 @@ public class ClienteController {
     }
 
     @GetMapping("clientes")
-    public ResponseEntity<List<Cliente>> getAllCliente() {
-        List<Cliente> listaClientes = clienteService.getAllClientes();
-        return new ResponseEntity<List<Cliente>>(listaClientes, HttpStatus.OK);
+    public ResponseEntity<List<Cadastro>> getAllCliente() {
+        List<Cadastro> listaClientes = clienteService.getAllClientes();
+        return new ResponseEntity<List<Cadastro>>(listaClientes, HttpStatus.OK);
     }
 
     @GetMapping("cliente/{id}")
-    public ResponseEntity<Cliente> getClienteById(@PathVariable("id") Long id) {
-        Cliente cliente = clienteService.getClienteById(id);
-        return new ResponseEntity<Cliente>(cliente, HttpStatus.OK);
+    public ResponseEntity<Cadastro> getClienteById(@PathVariable("id") Long id) {
+        Cadastro cliente = clienteService.getClienteById(id);
+        return new ResponseEntity<Cadastro>(cliente, HttpStatus.OK);
     }
 
     @PostMapping("addCliente")
-    public ResponseEntity<Void> addCliente(@RequestBody Cliente cliente, UriComponentsBuilder builder) {
-        Cliente savedCliente = clienteService.addCliente(cliente);
+    public ResponseEntity<Void> addCliente(@RequestBody Cadastro cliente, UriComponentsBuilder builder) {
+        Cadastro savedCliente = clienteService.addCliente(cliente);
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(builder.path("/cliente/{id}").buildAndExpand(savedCliente.getId()).toUri());
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
 
     @PutMapping("update/{id}")
-    public ResponseEntity<Cliente> updateCliente(@PathVariable Long id, @RequestBody Cliente cliente) {
+    public ResponseEntity<Cadastro> updateCliente(@PathVariable Long id, @RequestBody Cadastro cliente) {
         clienteService.updateCliente(id, cliente);
 
-        return new ResponseEntity<Cliente>(cliente, HttpStatus.OK);
+        return new ResponseEntity<Cadastro>(cliente, HttpStatus.OK);
     }
 
     @DeleteMapping("cliente/{id}")

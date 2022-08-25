@@ -2,16 +2,16 @@ package br.com.solutionsprint.solution.service;
 
 import java.util.List;
 
-import br.com.solutionsprint.solution.model.Cliente;
+import br.com.solutionsprint.solution.model.Cadastro;
 
 public interface IClienteService {
-    List<Cliente> getAllClientes();
+    List<Cadastro> getAllClientes();
 
-    Cliente getClienteById(Long id);
+    Cadastro getClienteById(Long id);
 
-    Cliente addCliente(Cliente cliente);
+    Cadastro addCliente(Cadastro cadastro);
 
-    Cliente updateCliente(Long id, Cliente cliente);
+    Cadastro updateCliente(Long id, Cadastro cadastro);
 
     void deleteCliente(long id);
 
