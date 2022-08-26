@@ -8,31 +8,31 @@ import br.com.solutionsprint.solution.model.Post;
 public class PostService implements IPostService {
 
     @Override
-    public List<Post> getAllEndereco() {
+    public List<Post> getAllPost() {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Cadastro getEnderecoById() {
+    public Cadastro getPostById() {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Cadastro addEndereco(Post post) {
+    public Cadastro addPost(Post post) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Cadastro updateEndereco(Post post) {
+    public Cadastro updatePost(Post post) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public void deleteEndereco(long id) {
+    public void deletePost(long id) {
         // TODO Auto-generated method stub
 
     }

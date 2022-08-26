@@ -7,13 +7,13 @@ import br.com.solutionsprint.solution.model.Post;
 
 public interface IPostService {
 
-    List<Post> getAllEndereco();
+    List<Post> getAllPost();
 
-    Cadastro getEnderecoById();
+    Cadastro getPostById();
 
-    Cadastro addEndereco(Post post);
+    Cadastro addPost(Post post);
 
-    Cadastro updateEndereco(Post post);
+    Cadastro updatePost(Post post);
 
-    void deleteEndereco(long id);
+    void deletePost(long id);
 }

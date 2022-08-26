@@ -12,14 +12,14 @@ import br.com.solutionsprint.solution.model.Cadastro;
 import br.com.solutionsprint.solution.repository.CadastroRepository;
 
 @Service
-public class CadastroService implements IClienteService {
+public class CadastroService implements ICadastroService {
 
     @Autowired
     CadastroRepository clienteRepository;
 
     @Override
     @Transactional
-    public List<Cadastro> getAllClientes() {
+    public List<Cadastro> getAllCadastro() {
         List<Cadastro> listaClientes = new ArrayList<>();
         clienteRepository.findAll().forEach(e -> listaClientes.add(e));
         return listaClientes;
@@ -27,7 +27,7 @@ public class CadastroService implements IClienteService {
 
     @Override
     @Transactional
-    public Cadastro getClienteById(Long id) {
+    public Cadastro getCadastroById(Long id) {
 
         Cadastro cliente = clienteRepository.findById(id).get();
 
@@ -36,13 +36,13 @@ public class CadastroService implements IClienteService {
 
     @Override
     @Transactional
-    public Cadastro addCliente(Cadastro cadastro) {
+    public Cadastro addCadastro(Cadastro cadastro) {
         return clienteRepository.save(cadastro);
     }
 
     @Override
     @Transactional
-    public Cadastro updateCliente(Long id, Cadastro cadastro) {
+    public Cadastro updateCadastro(Long id, Cadastro cadastro) {
 
         Cadastro cl = clienteRepository.findById(id).get();
 
@@ -54,7 +54,7 @@ public class CadastroService implements IClienteService {
 
     @Override
     @Transactional
-    public void deleteCliente(long id) {
+    public void deleteCadastro(long id) {
         clienteRepository.delete(clienteRepository.findById(id).get());
     }
 
